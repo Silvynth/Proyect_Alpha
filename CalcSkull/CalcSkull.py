@@ -39,7 +39,7 @@ def main():
             break
         else:
             clean_console()
-            print("Opcin invalida\nporfavor vuelva a digitar un digito Ej:\n1 / 2 / 3")
+            print("Opcin invalida\nporfavor vuelva a digitar un digito Ej:\n1 / 2 / 3\n==================================================")
             
             
 if __name__ == "__main__":
