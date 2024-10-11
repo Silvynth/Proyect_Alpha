@@ -1,85 +1,46 @@
-class Recursos:
-    def __init__(self):
-        self.bronces = 0  # Bronces
-        self.platas = 0   # Platas
-        self.oros = 0     # Oros
-        self.diamantes = 0  # Diamantes
+#Calculadora de personajes de skullgirls
+#librerias
+import os
 
-    def convertir_bronces_a_platas(self, bronces):
-        platas_obtenidas = bronces // 4
-        self.platas += platas_obtenidas
-        return platas_obtenidas
+#Variable Bronces/plata/oro
+B = 0
+P = 0
+O = 0
 
-    def convertir_platas_a_oros(self, platas):
-        oros_obtenidos = platas // 5
-        self.oros += oros_obtenidos
-        return oros_obtenidos
+#Menu principal
+def show_menu():
+    print("Evolution skullgirls\n1. Plata\n2. Oro\n3. Diamante\n4. Salir")
 
-    def convertir_oros_a_diamantes(self, oros):
-        diamantes_obtenidos = oros // 6
-        self.diamantes += diamantes_obtenidos
-        return diamantes_obtenidos
+def diamond():
+    print("El costo a evolucionar sera 5 de de oro\el proceso de calculo es simple\nIntrodusca la cantidad de personajes de\nBronce\nPlata\nOro")
+    input("Bronce: ")
+    input("Plata: ")
+    input("Oro: ")
 
-    def mostrar_recursos(self):
-        print(f"Recursos actuales:\nBronces: {self.bronces}, Platas: {self.platas}, Oros: {self.oros}, Diamantes: {self.diamantes}")
+def info():
+    print("Helo world")
 
-
-def mostrar_menu():
-    print("\n----- Menú -----")
-    print("1. Bronce -> Plata")
-    print("2. Plata -> Oro")
-    print("3. Oro -> Diamante")
-    print("4. Mostrar recursos actuales")
-    print("5. Salir")
+def clean_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
+#Codigo a ejecucin primaria
 def main():
-    recursos = Recursos()
-
+    clean_console()
     while True:
-        mostrar_menu()
-        try:
-            opcion = int(input("Selecciona una opción (1-5): "))
+        show_menu()
+        opcion = input("Seleccionar opción:")
 
-            if opcion == 1:
-                bronces_a_evolucionar = int(input("Ingresa el número de bronces a convertir a platas: "))
-                if bronces_a_evolucion <= recursos.bronces:
-                    recursos.bronces -= bronces_a_evolucion
-                    platas_obtenidas = recursos.convertir_bronces_a_platas(bronces_a_evolucion)
-                    print(f"Se han obtenido {platas_obtenidas} platas.")
-                else:
-                    print("No tienes suficientes bronces.")
-
-            elif opcion == 2:
-                platas_a_evolucionar = int(input("Ingresa el número de platas a convertir a oros: "))
-                if platas_a_evolucionar <= recursos.platas:
-                    recursos.platas -= platas_a_evolucionar
-                    oros_obtenidos = recursos.convertir_platas_a_oros(platas_a_evolucionar)
-                    print(f"Se han obtenido {oros_obtenidos} oros.")
-                else:
-                    print("No tienes suficientes platas.")
-
-            elif opcion == 3:
-                oros_a_evolucionar = int(input("Ingresa el número de oros a convertir a diamantes: "))
-                if oros_a_evolucionar <= recursos.oros:
-                    recursos.oros -= oros_a_evolucionar
-                    diamantes_obtenidos = recursos.convertir_oros_a_diamantes(oros_a_evolucionar)
-                    print(f"Se han obtenido {diamantes_obtenidos} diamantes.")
-                else:
-                    print("No tienes suficientes oros.")
-
-            elif opcion == 4:
-                recursos.mostrar_recursos()
-                
-            elif opcion == 5:
-                print("Saliendo del programa...")
-                break
-                
-            else:
-                print("Opción no válida. Por favor, selecciona una opción correcta.")
-                
-        except ValueError:
-            print("Por favor, ingresa un número válido.")
-
+        if opcion == "1":
+            diamond()
+        elif opcion == "2":
+            info()
+        elif opcion == "3":
+            break
+        else:
+            clean_console()
+            print("Opcin invalida\nporfavor vuelva a digitar un digito Ej:\n1 / 2 / 3")
+            
+            
 if __name__ == "__main__":
     main()
