@@ -13,17 +13,23 @@ Menu = input("Ingrese funcion a usar: ")
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #Resultado
-if Menu == '1':
-    v1 = int(input("Ingrese primer digito: "))
-    v2 = int(input("Ingrese segundo digito: "))
-    Rs = v1+v2
-    print(Rs)
+while True:
+    if Menu == '1':
+        v1 = int(input("Ingrese primer digito: "))
+        v2 = int(input("Ingrese segundo digito: "))
+        Rs = v1+v2
+        print(Rs)
 
-elif Menu == '2':
-    v1 = int(input("Ingrese primer digito: "))
-    v2 = int(input("Ingrese segundo digito: "))
-    Rs = v1-v2
-    print(Rs)
+    elif Menu == '2':
+        v1 = int(input("Ingrese primer digito: "))
+        v2 = int(input("Ingrese segundo digito: "))
+        Rs = v1-v2
+        print(Rs)
 
-else:
-    
+    elif  Menu == '3':
+        break
+
+    else:
+        print("Porfavor vuelva a seleccionar una opcion valida")
+        break
+        
